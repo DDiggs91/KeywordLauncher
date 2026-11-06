@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Keyword Launcher manifest",
+  "type": "object",
+  "required": [
+    "manifest_version",
+    "name",
+    "version",
+    "omnibox",
+    "permissions",
+    "background",
+    "options_ui",
+    "icons"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "manifest_version": { "const": 3 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 45 },
+    "version": { "type": "string", "pattern": "^\\d+(\\.\\d+){0,3}$" },
+    "description": { "type": "string", "maxLength": 132 },
+    "minimum_chrome_version": { "type": "string", "pattern": "^\\d+$" },
+    "omnibox": {
+      "type": "object",
+      "required": ["keyword"],
+      "additionalProperties": false,
+      "properties": { "keyword": { "type": "string", "minLength": 1 } }
+    },
+    "permissions": {
+      "type": "array",
+      "items": { "enum": ["tabs", "tabGroups", "storage", "offscreen"] },
+      "uniqueItems": true
+    },
+    "optional_permissions": {
+      "type": "array",
+      "items": { "enum": ["userScripts"] },
+      "uniqueItems": true
+    },
+    "background": {
+      "type": "object",
+      "required": ["service_worker"],
+      "additionalProperties": false,
+      "properties": {
+        "service_worker": { "type": "string" },
+        "type": { "enum": ["module", "classic"] }
+      }
+    },
+    "action": { "type": "object" },
+    "options_ui": {
+      "type": "object",
+      "required": ["page"],
+      "additionalProperties": false,
+      "properties": { "page": { "type": "string" }, "open_in_tab": { "type": "boolean" } }
+    },
+    "icons": {
+      "type": "object",
+      "required": ["16", "32", "48", "128"],
+      "additionalProperties": { "type": "string" }
+    }
+  }
+}

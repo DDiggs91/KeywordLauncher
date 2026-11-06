@@ -1,0 +1,29 @@
+{
+  "name": "keyword-launcher",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Chrome omnibox keyword launcher",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "lint": "eslint . && prettier --check .",
+    "format": "prettier --write .",
+    "validate": "node scripts/validate.js",
+    "test": "vitest run --coverage",
+    "test:e2e": "node scripts/e2e.js",
+    "package": "node scripts/package.js",
+    "ci": "npm run lint && npm run build && npm run validate && npm test && npm run test:e2e && npm run package"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.0.0",
+    "@playwright/test": "1.49.1",
+    "@vitest/coverage-v8": "^2.1.0",
+    "ajv": "^8.17.1",
+    "archiver": "^7.0.1",
+    "eslint": "^9.0.0",
+    "globals": "^15.0.0",
+    "jsdom": "^25.0.0",
+    "prettier": "^3.3.0",
+    "vitest": "^2.1.0"
+  }
+}

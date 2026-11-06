@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "settings": { "unknownKeyword": "search", "defaultTarget": "currentTab" },
+  "shortcuts": [
+    {
+      "id": "00000000-0000-4000-8000-000000000001",
+      "keyword": "docs",
+      "description": "Search MDN for the text you type",
+      "requiresQuery": true,
+      "steps": [
+        {
+          "type": "openUrls",
+          "urls": ["https://developer.mozilla.org/en-US/search?q={query}"],
+          "target": "currentTab"
+        }
+      ]
+    },
+    {
+      "id": "00000000-0000-4000-8000-000000000002",
+      "keyword": "work",
+      "description": "Example: open mail and calendar in a tab group",
+      "requiresQuery": false,
+      "steps": [
+        {
+          "type": "openUrls",
+          "urls": ["https://mail.google.com", "https://calendar.google.com"],
+          "target": "newTabs"
+        },
+        { "type": "tabGroup", "name": "Work", "color": "blue" }
+      ]
+    }
+  ]
+}

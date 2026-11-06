@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "shortcuts": [
+    {
+      "id": "u1",
+      "keyword": "evil",
+      "steps": [{ "type": "openUrls", "urls": ["javascript:alert(1)"], "target": "newTabs" }]
+    }
+  ]
+}

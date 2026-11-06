@@ -1,0 +1,9 @@
+dist
+dist-test
+release
+coverage
+package-lock.json
+Keyword Launcher — Build Spec.md
+.devcontainer
+test-results
+playwright-report

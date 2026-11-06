@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Keyword Launcher</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <header class="top">
+      <h1>Keyword Launcher</h1>
+      <p class="hint">Type <kbd>go</kbd> + Space in the address bar, then a shortcut name.</p>
+    </header>
+    <main class="layout">
+      <section class="sidebar" aria-label="Shortcuts">
+        <label for="search">Search shortcuts</label>
+        <input id="search" type="search" autocomplete="off" />
+        <ul id="shortcut-list" class="list"></ul>
+        <div class="row">
+          <button id="add-shortcut" type="button">Add shortcut</button>
+        </div>
+        <div id="undo-bar" class="undo" hidden>
+          <span>Shortcut deleted.</span>
+          <button id="undo-btn" type="button">Undo</button>
+        </div>
+        <div class="meter" aria-live="polite">
+          <label for="size-meter">Sync storage used</label>
+          <progress id="size-meter" max="100" value="0"></progress>
+          <span id="size-text"></span>
+        </div>
+        <div class="row">
+          <button id="export-btn" type="button">Export JSON</button>
+          <label class="button" for="import-file">Import JSON</label>
+          <input id="import-file" type="file" accept="application/json,.json" hidden />
+        </div>
+        <div id="import-panel" hidden></div>
+        <p id="status" role="status" class="status"></p>
+      </section>
+      <section id="editor" class="editor" aria-label="Shortcut editor">
+        <p class="empty">Select a shortcut or add a new one.</p>
+      </section>
+    </main>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

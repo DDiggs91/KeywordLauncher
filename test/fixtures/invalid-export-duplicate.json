@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "shortcuts": [
+    { "id": "d1", "keyword": "same", "steps": [{ "type": "wait", "ms": 10 }] },
+    { "id": "d2", "keyword": "SAME", "steps": [{ "type": "wait", "ms": 10 }] }
+  ]
+}

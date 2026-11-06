@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "settings": { "unknownKeyword": "search", "defaultTarget": "currentTab" },
+  "shortcuts": [
+    {
+      "id": "fx-1",
+      "keyword": "pages",
+      "description": "Three local pages in a group",
+      "requiresQuery": false,
+      "steps": [
+        {
+          "type": "openUrls",
+          "urls": ["http://127.0.0.1:{PORT}/page-a.html", "http://127.0.0.1:{PORT}/page-b.html"],
+          "target": "newTabs"
+        },
+        { "type": "tabGroup", "name": "Imported", "color": "green" }
+      ]
+    },
+    {
+      "id": "fx-2",
+      "keyword": "find",
+      "description": "Query test",
+      "requiresQuery": true,
+      "steps": [
+        {
+          "type": "openUrls",
+          "urls": ["http://127.0.0.1:{PORT}/search.html?q={query}"],
+          "target": "newTabs"
+        }
+      ]
+    }
+  ]
+}
