@@ -64,3 +64,9 @@ twice in a row (flake check) before tagging.
 - [ ] Enable user scripts, add a runScript step, confirm it runs
 - [ ] Restart Chrome; shortcuts persist and the keyword still works
 - [ ] **Copy text** step really puts text on the clipboard (not verifiable headlessly; see CHANGELOG notes)
+
+## Download
+
+Grab `keyword-launcher-<version>.zip` from the [Releases page](https://github.com/DDiggs91/KeywordLauncher/releases),
+unzip it, then use **Load unpacked** on the unzipped folder. Pushing a tag like `v1.0.0` (matching `package.json`)
+publishes a release automatically.
